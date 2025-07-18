@@ -5,6 +5,7 @@ const dashboard = document.getElementById('dashboard');
 const loginBtn = document.getElementById('login-btn');
 const registerBtn = document.getElementById('register-btn');
 const logoutBtn = document.getElementById('logout-btn');
+const homeBtn = document.getElementById('home-btn');
 
 const loginForm = document.getElementById('login-form');
 const registerForm = document.getElementById('register-form');
@@ -20,7 +21,21 @@ function showDashboard(username) {
     registerSection.classList.add('hidden');
     dashboard.classList.remove('hidden');
     logoutBtn.classList.remove('hidden');
+    homeBtn.classList.add('hidden');
+    loginBtn.classList.add('hidden');
+    registerBtn.classList.add('hidden');
     loadTasks();
+}
+
+function showWelcome () {
+    document.getElementById('welcome-section').classList.remove('hidden');
+    loginSection.classList.add('hidden');
+    registerSection.classList.add('hidden');
+    dashboard.classList.add('hidden');
+    logoutBtn.classList.add('hidden');
+    homeBtn.classList.remove('hidden');
+    loginBtn.classList.remove('hidden');
+    registerBtn.classList.remove('hidden');
 }
 
 function logoutUser() {
@@ -28,6 +43,7 @@ function logoutUser() {
     dashboard.classList.add('hidden');
     welcomeMessage.textContent = '';
     logoutBtn.classList.add('hidden');
+    showWelcome();
 }
 
 // Toggle forms
@@ -44,6 +60,10 @@ registerBtn.addEventListener('click', () => {
 logoutBtn.addEventListener('click', () => {
     logoutUser();
 });
+
+homeBtn.addEventListener('click', () => {
+    showWelcome();
+})
 
 
 // Register and Login (localstorage Sim until backend built)
@@ -127,5 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (currentUser) {
         showDashboard(currentUser.username);
+    } else {
+        showWelcome();
     }
 });
