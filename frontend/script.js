@@ -82,7 +82,7 @@ loginForm.addEventListener('submit', (e) => {
         return;
     }
 
-    localStorage.setItem('currentUser', JSON.stringify({ email, username: user.username}));
+    localStorage.setItem('currentUser', JSON.stringify({ email, username: user.username }));
     loginForm.reset();
     showDashboard(user.username);
 });
@@ -112,11 +112,12 @@ function loadTasks() {
 
     const userTasks = JSON.parse(localStorage.getItem(`tasks_${user.email}`) || '[]');
     userTasks.forEach(task => {
-        const card = document.getElementById('div');
+        const card = document.createElement('div');
         card.classList.add('task-card');
         card.innerHTML = `
         <h3>${task.title}</h3>
         <p>${task.description}</p>`;
+        taskList.appendChild(card);
     });
 }
 
