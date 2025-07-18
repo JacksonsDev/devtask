@@ -108,3 +108,7 @@ footer {
     font-weight: bold;
     font-family: sans-serif;
 }
+
+#welcome-section {
+    text-align: center;
+}

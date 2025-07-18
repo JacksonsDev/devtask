@@ -12,11 +12,16 @@
       <nav>
         <button id="login-btn">Login</button>
         <button id="register-btn">Register</button>
-        <button id="logout-btn">Logout</button>
+        <button id="logout-btn" class="hidden">Logout</button>
       </nav>
     </header>
     <main>
       <span id="welcome-message"></span>
+      <!-- Welcome Section -->
+       <section id="welcome-section">
+        <h1>Welcome to the task tracker for devs</h1>
+        <p>Please register or login to continue.</p>
+       </section>
       <!-- Registration form -->
       <section id="register-section" class="auth-form hidden">
         <h2>Create Account</h2>
@@ -49,7 +54,7 @@
       </section>
 
       <!-- Task Dashboard -->
-      <section id="dashboard">
+      <section id="dashboard" class="hidden">
         <h2>Your tasks</h2>
         <form id="task-form">
           <input type="text" placeholder="Task Title" name="title" required />
