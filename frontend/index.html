@@ -10,13 +10,13 @@
     <header>
       <h1>DevTask</h1>
       <nav>
-        <span id="welcome-message"></span>
         <button id="login-btn">Login</button>
         <button id="register-btn">Register</button>
         <button id="logout-btn">Logout</button>
       </nav>
     </header>
     <main>
+      <span id="welcome-message"></span>
       <!-- Registration form -->
       <section id="register-section" class="auth-form hidden">
         <h2>Create Account</h2>
@@ -49,18 +49,22 @@
       </section>
 
       <!-- Task Dashboard -->
-       <section id="dashboard">
+      <section id="dashboard">
         <h2>Your tasks</h2>
         <form id="task-form">
-            <input type="text" placeholder="Task Title" name="title" required />
-            <textarea name="description" placeholder="Task Description" required></textarea>
-            <button type="submit">Add Task</button>
+          <input type="text" placeholder="Task Title" name="title" required />
+          <textarea
+            name="description"
+            placeholder="Task Description"
+            required
+          ></textarea>
+          <button type="submit">Add Task</button>
         </form>
         <div id="task-list" class="task-grid"></div>
-       </section>
+      </section>
     </main>
     <footer>
-        <p>2025 Jacksons Dev | Dev Task</p>
+      <p>2025 Jacksons Dev | Dev Task</p>
     </footer>
     <script src="script.js"></script>
   </body>

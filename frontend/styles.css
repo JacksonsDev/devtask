@@ -80,7 +80,7 @@ main {
     margin-top: 2rem;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit);
 }
 
 .task-card {
@@ -101,4 +101,10 @@ footer {
 
 .hidden {
     display: none;
+}
+
+#welcome-message {
+    font-size: 48px;
+    font-weight: bold;
+    font-family: sans-serif;
 }
